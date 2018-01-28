@@ -1,0 +1,46 @@
+.title{
+  font-size :50rpx;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+
+}
+.keyBox{
+  margin-top: 10rpx;
+  flex-direction:row;
+}
+
+.keyBoxItem{
+  margin-right: 5rpx;
+  font-size: 30rpx;
+  color:grey;
+}
+.main{
+  margin: 20rpx;
+}
+
+.btn-search {
+  opacity: 0.8;
+  color: white;
+  background-color: #ff8719;
+  margin-top: 20rpx;
+}
+.btn-rest {
+  opacity: 0.8;
+  color: #ff8719;
+  background-color: white;
+  margin-top: 20rpx;
+  border-style:solid; 
+  border-width:1px; 
+  border-color:#ff8719; 
+}
+
+
+.btn-input {
+  border-color: #878787;
+  border-style: solid;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  font-size: 30rpx;
+}

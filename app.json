@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/others/others",
+    "pages/coursePage/coursePage",
+    "pages/courseTable/courseTable"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/Home.png",
+        "iconPath": "images/Home.png",
+        "pagePath": "pages/index/index",
+        "text": "Home"
+      },
+      {
+        "selectedIconPath": "images/Others.png",
+        "iconPath": "images/Others.png",
+        "pagePath": "pages/others/others",
+        "text": "More"
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+/* pages/Others.wxss */
+
+.itemButton{
+  margin: 40rpx;
+}

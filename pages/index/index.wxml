@@ -1,0 +1,31 @@
+<!--index.wxml-->
+
+<view class='main'>
+  <form bindsubmit='getCourse' bindreset='resetKeywordInput'>
+    <view class="section">
+      <view class='title'>班级课表查询</view>
+      <input class='btn-input' name="keywords" placeholder="输入关键词。如 2017，工程管理，1班" value="{{lasttime_keywords}}" bindinput='onNewKeywordInput' />
+      <block wx:if="{{haskeywords}}">
+
+        <view class='keyBox'>
+          <text class='keyBoxItem'>历史记录:</text>
+          <text class='keyBoxItem'>点我清空</text>
+
+          <block wx:for='{{keywords_list}}'>
+            <text class='keyBoxItem' data-keyword='{{item}}' bindtap='onKeywordTouched' > {{item}} </text>
+          </block>
+        </view>
+
+      </block>
+
+
+      <view class="btn-area">
+        <button formType="submit" class='btn-search'>提交</button>
+        <button formType="reset" class='btn-rest'>重设</button>
+      </view>
+
+
+
+    </view>
+  </form>
+</view>

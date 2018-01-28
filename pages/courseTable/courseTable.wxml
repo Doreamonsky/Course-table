@@ -1,0 +1,35 @@
+<scroll-view scroll-y="true" class="scroll">
+  <view class="wrapper">
+    <picker bindchange="teachWeekPickerChange" value="{{index}}" range="{{teachWeek}}">
+    <view class="picker">
+      当前选择：{{teachWeek[index]}} 的
+    </view>
+  </picker>
+    <view class="top">
+      <view wx:for="{{['一','二','三','四','五']}}" class="top-text">周{{item}}</view>
+    </view>
+    <view style="height:1800rpx;width:730rpx;display:flex;">
+      <view class="leftContainter">
+        <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]}}" class="leftItem">
+          {{item}}
+        </view>
+      </view>
+      <view wx:for="{{[0,1,0,1,1,0,1,0,1,0,1,0,1,0,1]}}">
+        <view style="width:750rpx;margin-top:{{(index+1)*100}}rpx;  position: absolute;border-bottom:{{item==1?'1':'0'}}rpx solid {{index==4?'red':'grey'}};">
+        </view>
+      </view>
+
+
+
+      <view wx:for="{{wlist}}">
+         <view class="course-item" data-index="{{index}}" style="margin-left:{{(item.week-1)*150}}rpx;margin-top:{{(item.course_time)*100+5}}rpx;height:{{item.course_length*100-5}}rpx;">
+         <view class='course-type' style='background-color:{{colorArrays[index%9]}}'></view>
+          <view class="smalltext" bindtap='viewCourseDetail' data-course='{{item.course_detail}}'>{{item.course_name}}</view>
+
+        </view> 
+
+      </view>
+    </view>
+  </view>
+
+</scroll-view>

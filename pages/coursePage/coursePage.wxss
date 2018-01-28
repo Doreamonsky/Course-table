@@ -1,0 +1,4 @@
+.flex-view-item{
+  display: flex;
+  margin: 2rem;
+}

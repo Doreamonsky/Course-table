@@ -1,0 +1,10 @@
+<view class="flex-center" style="display: block;">
+  <view class="flex-view-item itemButton">
+    <text>开源组件许可 \n 
+    上师大CAS登陆与课程爬虫 \n 地址: https://github.com/Doreamonsky/Shnu-Cas-Login \n
+    </text>
+  </view>
+  <view class="flex-view-item itemButton">
+    <button type='primary' bindtap='about'>关于</button>
+  </view>
+</view>

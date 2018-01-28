@@ -9,7 +9,7 @@
 
         <view class='keyBox'>
           <text class='keyBoxItem'>历史记录:</text>
-          <text class='keyBoxItem'>点我清空</text>
+          <text class='keyBoxItem' bindtap='clearHistory'>点我清空</text>
 
           <block wx:for='{{keywords_list}}'>
             <text class='keyBoxItem' data-keyword='{{item}}' bindtap='onKeywordTouched' > {{item}} </text>
@@ -25,7 +25,15 @@
       </view>
 
 
-
+      <view class='section-more'>
+      <text class='btn-more' bindtap='onTouchMyCourse'>我的课表</text>   
+      <view class='divider' /> <text class='btn-more' bindtap='onTouchClassRoomRouter'>教室检索</text>  
+      <!-- <view class='divider' />  -->
+      <!-- <text class='btn-more'>课程寻找</text>  -->
+      </view>
+       <view class='section-more' style='margin-top:140rpx;'>
+       <button open-type="share" class='btn-share' >若好用，别忘分享给Shnuers！</button> 
+      </view>
     </view>
   </form>
 </view>

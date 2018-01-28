@@ -4,30 +4,32 @@
     "pages/logs/logs",
     "pages/others/others",
     "pages/coursePage/coursePage",
-    "pages/courseTable/courseTable"
+    "pages/courseTable/courseTable",
+    "pages/classRoomRouter/classRoomRouter",
+    "pages/myCourseTable/myCourseTable"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "上海师范大学智慧课表",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "black",
+    "color": "#080808",
     "selectedColor": "#11cd6e",
     "borderStyle": "black",
     "list": [
       {
-        "selectedIconPath": "images/Home.png",
-        "iconPath": "images/Home.png",
+        "selectedIconPath": "images/Activity.png",
+        "iconPath": "images/Activity.png",
         "pagePath": "pages/index/index",
-        "text": "Home"
+        "text": "课程"
       },
       {
-        "selectedIconPath": "images/Others.png",
-        "iconPath": "images/Others.png",
+        "selectedIconPath": "images/Addressbook.png",
+        "iconPath": "images/Addressbook.png",
         "pagePath": "pages/others/others",
-        "text": "More"
+        "text": "其他"
       }
     ]
   }

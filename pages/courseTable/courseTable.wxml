@@ -2,7 +2,7 @@
   <view class="wrapper">
     <picker bindchange="teachWeekPickerChange" value="{{index}}" range="{{teachWeek}}">
     <view class="picker">
-      当前选择：{{teachWeek[index]}} 的
+      当前教学周:{{teachWeek[index]}} [点击进行切换]
     </view>
   </picker>
     <view class="top">
@@ -14,8 +14,8 @@
           {{item}}
         </view>
       </view>
-      <view wx:for="{{[0,1,0,1,1,0,1,0,1,0,1,0,1,0,1]}}">
-        <view style="width:750rpx;margin-top:{{(index+1)*100}}rpx;  position: absolute;border-bottom:{{item==1?'1':'0'}}rpx solid {{index==4?'red':'grey'}};">
+      <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]}}">
+        <view style="width:750rpx;margin-top:{{(index+1)*100}}rpx;  position: absolute;border-bottom:1rpx dashed {{index==4?'red':'grey'}};">
         </view>
       </view>
 

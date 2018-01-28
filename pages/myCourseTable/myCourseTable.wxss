@@ -1,0 +1,32 @@
+/* pages/myCourseTable/myCourseTable.wxss */
+.main{
+  margin: 20rpx;
+}
+.addInput{
+  border-color: grey;
+  border-style: solid;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  font-size: 30rpx;
+}
+
+.btn-add {
+  opacity: 0.8;
+  color: #ff8719;
+  background-color: white;
+  margin-top: 20rpx;
+  border-style:solid; 
+  border-width:1px; 
+  border-color:black; 
+}
+
+.btn-generate{
+  color: white;
+  background-color: #ff8719;
+  margin-top: 20rpx;
+  border-style:solid; 
+  border-width:1px; 
+  border-color:black; 
+}

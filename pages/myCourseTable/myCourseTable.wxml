@@ -1,0 +1,37 @@
+<!--pages/myCourseTable/myCourseTable.wxml-->
+<view>
+  <form bindsubmit='onAddCourseID'>
+    <view class='main'>
+      <input class ='addInput' name ='id' placeholder="请输入课程序号 如001031100042.08" value='{{blank}}'></input>
+      <button class ='btn-add' formType="submit">增加</button>
+      <button class ='btn-generate' bindtap='onRequestCourse'>生成课程表</button>
+
+    </view>
+
+  </form>
+
+  <view class="flex-row" style="display: block;">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">序号</view>
+        <view class="th">课程序号</view>
+        <view class="th">其他</view>
+
+
+      </view>
+      <block wx:for="{{course_code_list}}">
+        <view class="tr">
+          <view class="td">{{index+1}}</view>
+          <view class="td">{{item}}</view>
+          <view class="td" data-id='{{index}}' bindtap='onTouchDelete'>
+            <image style="width: 30px; height: 30px; " src='/images/delete.png'  ></image>
+          </view>
+
+        </view>
+      </block>
+    </view>
+
+
+  </view>
+
+</view>

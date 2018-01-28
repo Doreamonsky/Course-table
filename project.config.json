@@ -1,0 +1,48 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wx38c7f87262cb71a8",
+	"projectname": "Shnu_Course",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "教室查看",
+					"pathName": "pages/classRoomRouter/classRoomRouter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的课程",
+					"pathName": "pages/myCourseTable/myCourseTable",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,22 @@
+/* pages/classRoomRouter/classRoomRouter.wxss */
+
+.main {
+  margin-left: 40rpx;
+}
+.picker{
+  color:grey;
+}
+
+.room-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-text{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+.tip{
+  font-size: 25rpx;
+}

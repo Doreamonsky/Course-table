@@ -1,0 +1,22 @@
+<!--pages/classRoomRouter/classRoomRouter.wxml-->
+<view class='main'>
+  <view class="section">
+    <picker bindchange="onBuidingChanged" value="{{index}}" range="{{building_list}}">
+      <view class="picker">
+        教学楼:{{building_list[index]}} [点击切换]
+      </view>
+    </picker>
+    <text class='tip'> 点击教室即可查看其课程表.</text>
+  </view>
+
+  <block wx:for='{{roomData}}'>
+    <view class='room-panel'>
+      <block wx:if="{{indexActive == index}}">
+        <block wx:for='{{roomData[index]}}'>
+          <text class='room-text' bindtap='onRequestClassTimeTable' data-room='{{item}}'>{{item}}</text>
+        </block>
+      </block>
+    </view>
+  </block>
+
+</view>

@@ -6,7 +6,9 @@
     "pages/coursePage/coursePage",
     "pages/courseTable/courseTable",
     "pages/classRoomRouter/classRoomRouter",
-    "pages/myCourseTable/myCourseTable"
+    "pages/myCourseTable/myCourseTable",
+    "pages/helper/helper",
+    "pages/classFinder/classFinder"
   ],
   "window": {
     "backgroundTextStyle": "light",

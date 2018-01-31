@@ -41,6 +41,18 @@
 					"name": "我的课程",
 					"pathName": "pages/myCourseTable/myCourseTable",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "帮助",
+					"pathName": "pages/helper/helper",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "教室",
+					"pathName": "pages/classFinder/classFinder",
+					"query": ""
 				}
 			]
 		}

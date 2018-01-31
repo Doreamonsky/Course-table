@@ -1,9 +1,16 @@
 // pages/myCourseTable/myCourseTable.js
 var course_code_list = []
+var inSetting = false
+var last_import_str = ''
 
 Page({
   data: {
     "course_code_list": course_code_list
+  },
+  onShow: function () {
+    if (inSetting) {
+      getClip(this)
+    }
   },
   onLoad: function (options) {
     var that = this
@@ -20,26 +27,27 @@ Page({
         })
       },
     })
-    
+
     //读取课表
-    if (options.forceSetting ==0){
+    if (options.forceSetting == 0) {
       wx.showLoading()
 
       wx.getStorage({
         key: 'my_course_data',
-        success: function (res) {          
+        success: function (res) {
           wx.redirectTo({
             url: '/pages/courseTable/courseTable?data=' + JSON.stringify(res.data) + '&currentWeek=1',
           })
         },
-        complete:function(){
+        complete: function () {
           wx.hideLoading()
         }
       })
     }
-
-
-
+    else {
+      inSetting = true
+      getClip(that)
+    }
   },
   //删除ID
   onTouchDelete: function (e) {
@@ -76,7 +84,7 @@ Page({
   onRequestCourse: function () {
     var str = ''
     for (var i = 0; i < course_code_list.length; i++) {
-      str = str + course_code_list[i] + (i == course_code_list.length ? '' : ',')
+      str = str + course_code_list[i] + (i == course_code_list.length-1 ? '' : ',')
     }
     var jData = {
       'request': 'courses_by_id',
@@ -95,14 +103,14 @@ Page({
           key: 'my_course_data',
           data: res.data,
         })
-  
+
         wx.navigateTo({
           url: '/pages/courseTable/courseTable?data=' + JSON.stringify(res.data) + '&currentWeek=1',
-          complete:function(){
+          complete: function () {
             wx.showModal({
               title: '成功生成课表',
               content: '你可以在 菜单栏的"其他"中进行课程修改。',
-              showCancel:false
+              showCancel: false
             })
           }
         })
@@ -119,5 +127,53 @@ Page({
       }
     })
 
+  }, onTapHelp: function (e) {
+    wx.navigateTo({
+      url: '/pages/helper/helper',
+    })
   }
 })
+
+function getClip(that) {
+  wx.getClipboardData({
+    success: function (res) {
+      if (last_import_str == res.data) {
+        return
+      }
+
+      last_import_str = res.data
+
+      var reg = /([0-9]+\.[0-9]+)/g
+      var group = res.data.match(reg)
+
+
+      if (group.length != 0) {
+        var it = that
+
+        wx.showModal({
+          title: '检测到Clipboard有课程',
+          content: '点确定 自动导入课程' + group,
+          success: function (res) {
+            if (res.confirm) {
+              for (var i = 0; i < group.length; i++) {
+                course_code_list.push(group[i])
+              }
+
+              wx.setStorage({
+                key: 'course_code_list',
+                data: course_code_list,
+              })
+
+              it.setData({
+                "course_code_list": course_code_list,
+                "blank": ''
+              })
+            }
+          }
+        })
+
+      }
+
+    }
+  })
+}

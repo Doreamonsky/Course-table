@@ -102,7 +102,7 @@ function filter_course_by_week(currentCourse, currentWeek) {
   var isCurrentEvenWeek = currentWeek % 2 == 0 //目前双周
   var isCourseValid = true //Flag
   var week_duration = currentCourse.week_duration
-  var weekMatchReg = /\[(\d+)\-(\d+)\]/ //提取上课周数
+  var weekMatchReg = /(\d+)\-(\d+)/ //提取上课周数
   var group = weekMatchReg.exec(week_duration)
 
   week_duration = week_duration.replace(weekMatchReg, '') //防止干扰单周
@@ -110,11 +110,13 @@ function filter_course_by_week(currentCourse, currentWeek) {
   var startWeek = 0
   var endWeek = 0
 
-
-  if (group.length == 3) {
-    startWeek = parseInt(group[1])
-    endWeek = parseInt(group[2])
+  if (group != null) {
+    if (group.length == 3) {
+      startWeek = parseInt(group[1])
+      endWeek = parseInt(group[2])
+    }
   }
+
 
   var outOfWeekRange = currentWeek < startWeek || currentWeek > endWeek
 
@@ -139,10 +141,12 @@ function get_course_forclasses(courseData) {
 }
 
 function mergeable_course(course01, course02, row) {
-  return course01['course_name'] == course02['course_name'] &&
-    course01['week'] == course02['week'] &&
-    course01.course_detail['id'] == course02.course_detail['id'] &&
-    Math.abs(course01['course_time'] - course02['course_time']) == row ? true : false
+  if (course01.course_name == null || course02.course_name == null || course01.week == null || course02.week == null || course01.course_detail == null || course02.course_detail == null || course01.course_time == null || course02.course_time == null)
+    return false;
+
+  return course01.week == course02.week &&
+    course01.course_detail.id == course02.course_detail.id &&
+    Math.abs(course01.course_time - course02.course_time) == row ? true : false
 }
 
 function convert_week(week) {

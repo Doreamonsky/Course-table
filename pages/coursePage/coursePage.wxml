@@ -11,19 +11,19 @@
       </view>
       <block wx:for="{{places}}">
         <view class="tr">
-          <view class="td">{{item.teacher}}</view>
-          <view class="td">{{item.place}}</view>
-          <view class="td"><text>{{item.week}} \n 第{{item.time}}节</text></view>
-          <view class="td">{{item.week_duration}}</view>
+          <text class="td" selectable='true'>{{item.teacher}}</text>
+          <text class="td" selectable='true'>{{item.place}}</text>
+          <text class="td" selectable='true'>{{item.week}} \n 第{{item.time}}节</text>
+          <text class="td" selectable='true'>{{item.week_duration}}</text>
         </view>
       </block>
     </view>
 
-    <view class="flex-view-item">课程名称：{{name}} </view>
-    <view class="flex-view-item">课程序号：{{id}} </view>
-    <view class="flex-view-item">教学班:{{for_class}} </view>
-    <view class="flex-view-item">课程人数：{{actual_number}} /{{max_number}}</view>
-    <view class="flex-view-item">课程安排(学时/节数)：{{all_duration}} </view>
+    <text class="flex-view-item" selectable='true'>课程名称：{{name}} </text>
+    <text class="flex-view-item" selectable='true'>课程序号：{{id}} </text>
+    <text class="flex-view-item" selectable='true'>教学班:{{for_class}} </text>
+    <text class="flex-view-item" selectable='true'>课程人数：{{actual_number}} /{{max_number}}</text>
+    <text class="flex-view-item" selectable='true'>课程安排(学时/节数)：{{all_duration}} </text>
   </view>
 
 </view>

@@ -11,5 +11,9 @@ Page({
     wx.navigateTo({
       url: '/pages/myCourseTable/myCourseTable?forceSetting=1',
     })
+  }, onTapHelp:function(){
+    wx.navigateTo({
+      url: '/pages/helper/helper',
+    })
   }
 })

@@ -1,14 +1,16 @@
 <view class="flex-center" style="display: block;">
   <view>
-    <button class='btn' type='primary' bindtap='about'>关于</button>
+    <button class='btn' type='primary' bindtap='onTapHelp'>帮助</button>
     <button class='btn' type='primary' bindtap='onTapCustomizeCourses'>设置我的课表</button>
+    <button class='btn' type='primary' bindtap='about'>关于</button>
   </view>
 
   <view>
-    <text>\n开源组件许可 \n 
+    <text selectable='true'>\n开源组件许可 \n 
     上师大CAS登陆与课程爬虫 \n 地址: https://github.com/Doreamonsky/Shnu-Cas-Login \n
     隐私政策 \n
     服务器只进行课表生成，不会保存与记录你的搜索记录,在小程序的使用中也不会强制要求微信授权登陆。
+    只有在我的课表设置页面才会要求读取剪贴板信息来自动导入课表。
     </text>
   </view>
 </view>

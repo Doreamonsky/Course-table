@@ -1,0 +1,17 @@
+/* pages/helper/helper.wxss */
+
+.itemButton{
+  margin: 40rpx;
+}
+.flex-center{
+  display: flex;
+  margin: 20rpx;
+}
+.btn {
+  margin-top: 40rpx;
+}
+
+.tip {
+  font-size:30rpx;
+  color:grey;
+}

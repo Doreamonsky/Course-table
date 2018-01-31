@@ -3,6 +3,7 @@
   <form bindsubmit='onAddCourseID'>
     <view class='main'>
       <input class ='addInput' name ='id' placeholder="请输入课程序号 如001031100042.08" value='{{blank}}'></input>
+      <text class ='addInput' bindtap='onTapHelp'>点我，了解如何快速导入课表</text>
       <button class ='btn-add' formType="submit">增加</button>
       <button class ='btn-generate' bindtap='onRequestCourse'>生成课程表</button>
 

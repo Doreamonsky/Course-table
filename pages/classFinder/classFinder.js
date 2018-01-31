@@ -5,13 +5,13 @@ var course_helper = require('../../utils/course_helper.js')
 
 var currentKeywords = ''
 
-var app = getApp()
+var app =getApp()
 
 // Register a Page.
 Page({
   data: {
-    'course_has_keywords': true,
-    'course_keywords_list': ['管理学', '高等数学', '建筑力学'],
+    'haskeywords': true,
+    'keywords_list': ['2017', '工程管理', '1班'],
     'verison': app.globalData.currentVersion
   },
   onReady: function () {
@@ -19,10 +19,10 @@ Page({
     var that = this;
 
     wx.getStorage({
-      key: 'course_keywords_list',
+      key: 'keywords_list',
       success: function (res) {
         that.setData({
-          course_keywords_list: res.data
+          keywords_list: res.data
         }
 
         )
@@ -31,12 +31,12 @@ Page({
 
 
     wx.getStorage({
-      key: 'course_lasttime_keywords',
+      key: 'lasttime_keywords',
       success: function (res) {
         wx.hideToast()
 
         that.setData({
-          course_lasttime_keywords: res.data
+          lasttime_keywords: res.data
         }
         )
       }
@@ -50,7 +50,7 @@ Page({
     var jData = JSON.stringify(
       {
         'keywords': input_keywords,
-        'request': 'courses_list_by_keywords'
+        'request': 'courses_by_keywords'
       }
     )
 
@@ -69,12 +69,13 @@ Page({
         'json': jData
       },
       success: function (res) {
+ 
         wx.setStorage({
-          key: 'course_lasttime_keywords',
+          key: 'lasttime_keywords',
           data: input_keywords,
         })
         wx.setStorage({
-          key: 'course_keywords_list',
+          key: 'keywords_list',
           data: input_keywords.split(','),
         })
 
@@ -96,7 +97,7 @@ Page({
   },
   onShareAppMessage: function (e) {
     return {
-      title: '上师大专属课表，快速录入个人课表，查询教学班课表以及查询教室课表。有了这个小程序，你就手握学校课表数据库在手。',
+      title: '上师大智慧课表',
       desc: '快速录入个人课表，查询教学班课表以及查询教室课表。有了这个小程序，你就手握学校课表数据库在手。',
       path: '/pages/index/index'
     }
@@ -107,7 +108,7 @@ Page({
     currentKeywords = all
     this.setData(
       {
-        'course_lasttime_keywords': all
+        'lasttime_keywords': all
       }
     )
   },
@@ -119,31 +120,27 @@ Page({
   },
   clearHistory: function (e) {
     this.setData({
-      'course_keywords_list': []
+      'keywords_list':[]
     })
 
     wx.setStorage({
-      key: 'course_keywords_list',
+      key: 'keywords_list',
       data: [],
     })
-  },
-  onTouchClassRoomRouter: function (e) {
+  }, 
+  onTouchClassRoomRouter:function(e){
     wx.navigateTo({
       url: '/pages/classRoomRouter/classRoomRouter',
     })
   },
-  onTouchMyCourse: function (e) {
+  onTouchMyCourse:function(e){
     wx.showLoading()
 
     wx.navigateTo({
       url: '/pages/myCourseTable/myCourseTable?forceSetting=0',
-      success: function () {
-        wx.hideLoading()
+      success:function(){
+          wx.hideLoading()
       }
-    })
-  }, onTouchClassFinder: function (e) {
-    wx.navigateTo({
-      url: '/pages/classFinder/classFinder',
     })
   }
 })

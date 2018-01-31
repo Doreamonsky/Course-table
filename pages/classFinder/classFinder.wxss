@@ -27,7 +27,6 @@
   align-items:space-between;
 }
 .btn-more{
-  font-size: 35rpx;
   margin-right: 20rpx;
   margin-left: 20rpx;
   color:#878787;

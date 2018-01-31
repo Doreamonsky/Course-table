@@ -1,0 +1,26 @@
+<!--pages/helper/helper.wxml-->
+<view class="flex-center" style="display: block;">
+  <view>
+    <button class='btn' open-type="contact" type='primary'>+QQ403036847联系开发者</button>
+  </view>
+
+  <view>
+    <text class ='tip' selectable='true'>\n 使用帮助 \n 
+      （一）自动导入我的课表 \n
+      打开 http://course.shnu.edu.cn/ 进入我的课表 如图全选所有课程列表,复制
+    </text>
+
+      <image style ='width:50%; margin:20px;'src='/images/t1Import.jpg'></image>
+    <text class ='tip' selectable='true'>
+      回到课程表小程序，然后在 '其他' 中点击 '设置我的课表'。然后即会提示导入课表，点击确定即可。\n
+      (二) 班级课表查询的高级搜索 \n
+      上师大有许多中外合作课程，他们的搜索关键词会阻碍非中外合作的课程的搜索，所以引入这样伪正则表达式的搜索匹配模式。
+      '/'表示不包含关键词 ?表示非中外合作课程
+      用法: \n Eg1: 比如要搜索16届的计算机科学与技术本科1班 \n 关键词:2016,计算机科学与技术,?,/专科 \n 
+      解释:?用于去除中外合作 /专科 去除专科
+
+      \n (三) QA:这是否是学校官方开发的? \n
+      是民间开发的(可以在'关于'中查看详情)，课表数据源来自全校开课查询，然后进行二次整理得到的。整理方式 可以见我的GitHub上师大爬虫项目
+    </text>
+  </view>
+</view>

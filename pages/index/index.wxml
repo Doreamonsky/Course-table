@@ -3,16 +3,16 @@
 <view class='main'>
   <form bindsubmit='getCourse' bindreset='resetKeywordInput'>
     <view class="section">
-      <view class='title'>班级课表查询</view>
-      <input class='btn-input' name="keywords" placeholder="输入关键词。如 2017，工程管理，1班" value="{{lasttime_keywords}}" bindinput='onNewKeywordInput' />
-      <block wx:if="{{haskeywords}}">
+      <view class='title'>课程查询</view>
+      <input class='btn-input' auto-height='true' name="keywords" placeholder="输入关键词。如 建筑力学 " value="{{course_lasttime_keywords}}" bindinput='onNewKeywordInput' />
+      <block wx:if="{{course_has_keywords}}">
 
         <view class='keyBox'>
           <text class='keyBoxItem'>历史记录:</text>
           <text class='keyBoxItem' bindtap='clearHistory'>点我清空</text>
 
-          <block wx:for='{{keywords_list}}'>
-            <text class='keyBoxItem' data-keyword='{{item}}' bindtap='onKeywordTouched' > {{item}} </text>
+          <block wx:for='{{course_keywords_list}}'>
+            <text class='keyBoxItem' data-keyword='{{item}}' bindtap='onKeywordTouched'> {{item}} </text>
           </block>
         </view>
 
@@ -26,14 +26,18 @@
 
 
       <view class='section-more'>
-      <text class='btn-more' bindtap='onTouchMyCourse'>我的课表</text>   
-      <view class='divider' /> <text class='btn-more' bindtap='onTouchClassRoomRouter'>教室检索</text>  
-      <!-- <view class='divider' />  -->
-      <!-- <text class='btn-more'>课程寻找</text>  -->
+        <text class='btn-more' bindtap='onTouchMyCourse'>我的课表</text>
+        <view class='divider' />
+        <text class='btn-more' bindtap='onTouchClassRoomRouter'>教室检索</text>
+         <view class='divider' />  
+         <text class='btn-more' bindtap='onTouchClassFinder'>班级课表检索</text>  
       </view>
-       <view class='section-more' style='margin-top:140rpx;'>
-       <button open-type="share" class='btn-share' >若好用，别忘分享给Shnuers！</button> 
+      <view class='section-more' style='margin-top:140rpx;'>
+        <button open-type="share" class='btn-share'>若好用，别忘分享给Shnuers！</button>
       </view>
+
+      <text class='keyBoxItem' style='display:flex; justify-content:center;'>阿里云提供计算服务 \n 版本 {{verison}}</text>
+
     </view>
   </form>
 </view>

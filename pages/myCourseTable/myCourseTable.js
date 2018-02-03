@@ -38,6 +38,9 @@ Page({
           wx.redirectTo({
             url: '/pages/courseTable/courseTable?data=' + JSON.stringify(res.data) + '&currentWeek=1',
           })
+        }, fail: function (res) {
+          inSetting = true
+          getClip(that)
         },
         complete: function () {
           wx.hideLoading()
@@ -84,7 +87,7 @@ Page({
   onRequestCourse: function () {
     var str = ''
     for (var i = 0; i < course_code_list.length; i++) {
-      str = str + course_code_list[i] + (i == course_code_list.length-1 ? '' : ',')
+      str = str + course_code_list[i] + (i == course_code_list.length - 1 ? '' : ',')
     }
     var jData = {
       'request': 'courses_by_id',
@@ -129,7 +132,7 @@ Page({
 
   }, onTapHelp: function (e) {
     wx.navigateTo({
-      url: '/pages/helper/helper',
+      url: '/pages/helper/helper?type=1',
     })
   }
 })

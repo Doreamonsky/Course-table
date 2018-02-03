@@ -6,15 +6,24 @@
         <view class="th">教室</view>
         <view class="th ">时间</view>
         <view class="th ">课程长度</view>
-
-
+        <view class="th ">蹭课</view>
       </view>
-      <block wx:for="{{places}}">
+      <block wx:for="{{places}}" wx:for-index="idx">
         <view class="tr">
           <text class="td" selectable='true'>{{item.teacher}}</text>
           <text class="td" selectable='true'>{{item.place}}</text>
           <text class="td" selectable='true'>{{item.week}} \n 第{{item.time}}节</text>
           <text class="td" selectable='true'>{{item.week_duration}}</text>
+          <view class="td">
+            <block wx:if='{{item.share == true}}'>
+              <image bindtap='onDeleteShareClass' data-pID='{{idx}}' style="width: 30px; height: 30px; " src='/images/delete_fill.png'></image>
+
+            </block>
+            <block wx:if='{{item.share == false}}'>
+              <image bindtap='onJoinShareClass' data-pID='{{idx}}' style="width: 30px; height: 30px; " src='/images/addition_fill.png'></image>
+            </block>
+          </view>
+
         </view>
       </block>
     </view>

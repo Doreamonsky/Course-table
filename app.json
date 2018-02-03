@@ -8,7 +8,9 @@
     "pages/classRoomRouter/classRoomRouter",
     "pages/myCourseTable/myCourseTable",
     "pages/helper/helper",
-    "pages/classFinder/classFinder"
+    "pages/classFinder/classFinder",
+    "pages/courseList/courseList",
+    "pages/shareCourseList/shareCourseList"
   ],
   "window": {
     "backgroundTextStyle": "light",

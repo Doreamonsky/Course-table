@@ -1,5 +1,5 @@
 //app.js
-var currentVersion = '1.1 Pre-Release'
+var currentVersion = '1.3.2 Released'
 
 App({
   onLaunch: function () {

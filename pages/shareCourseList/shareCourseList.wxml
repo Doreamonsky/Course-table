@@ -1,0 +1,23 @@
+<!--pages/courseList/coruseList.wxml-->
+<view>
+  <view class="flex-row" style="display: block;">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">名称</view>
+        <view class="th">时间</view>
+        <view class="th">位置</view>
+      </view>
+      <block wx:for="{{course_list}}">
+        <view class="tr" bindtap='viewCourseDetail' data-course='{{item}}'>
+          <text class="td" selectable='true'>{{item.name}}</text>
+          <text class="td" selectable='true'>{{item.places[0].week}} \n 节数:{{item.places[0].time}}</text>
+          <text class="td" selectable='true'>{{item.places[0].place}}</text>
+
+        </view>
+      </block>
+    </view>
+
+
+  </view>
+
+</view>

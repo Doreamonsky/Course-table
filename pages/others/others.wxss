@@ -1,12 +1,47 @@
 /* pages/Others.wxss */
 
-.itemButton{
+.itemButton {
   margin: 40rpx;
 }
-.flex-center{
+
+.flex-center {
   display: flex;
-  margin: 20rpx;
+  margin: 40rpx;
 }
+
 .btn {
   margin-top: 40rpx;
+}
+
+.btn-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.btn-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 200rpx;
+  width: 100%;
+}
+
+.btn-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 40rpx;
+}
+
+.btn-text {
+  color: black;
+  font-size: 45rpx;
+  margin-left: 20rpx;
+}
+
+.btn-line {
+  width: 100%;
+  height: 4rpx;
+  background: lightgray;
+  margin-left: 90rpx;
 }

@@ -5,7 +5,7 @@
     <view class="section">
       <view class='title'>班级课表查询</view>
       <input class='btn-input' auto-height='true' name="keywords" placeholder="输入关键词。如 2017，工程管理，1班 " value="{{lasttime_keywords}}" bindinput='onNewKeywordInput' />
-      <text class='keyBoxItem'>注: 查看其他中的帮助了解 '/','?' 高级搜索 </text>
+      <text class='keyBoxItem' bindtap='onTapHelp'>点击查看高级搜索 </text>
       <block wx:if="{{haskeywords}}">
 
         <view class='keyBox'>

@@ -79,7 +79,7 @@ Page({
         })
 
         wx.navigateTo({
-          url: '/pages/courseTable/courseTable?data=' + JSON.stringify(res.data) + '&currentWeek=1',
+          url: '/pages/courseList/courseList?data=' + JSON.stringify(res.data),
         })
         wx.hideToast()
       },

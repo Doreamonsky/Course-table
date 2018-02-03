@@ -1,0 +1,24 @@
+<!--pages/courseList/coruseList.wxml-->
+<view>
+<text class='tip'>点击课程，查看详情 </text>
+  <view class="flex-row" style="display: block;">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">名称</view>
+        <view class="th">教学班级</view>
+        <view class="th">学分</view>
+      </view>
+      <block wx:for="{{course_list}}">
+        <view class="tr" bindtap='viewCourseDetail' data-course='{{item}}'>
+          <text class="td" selectable='true'>{{item.name}}</text>
+          <text class="td" selectable='true'>{{item.for_class}}</text>
+          <text class="td" selectable='true'>{{item.score}}</text>
+
+        </view>
+      </block>
+    </view>
+
+
+  </view>
+
+</view>

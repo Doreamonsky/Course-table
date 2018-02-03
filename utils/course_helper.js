@@ -1,7 +1,6 @@
 module.exports.get_course_array = get_course_array
 module.exports.filter_course_by_week = filter_course_by_week
 
-
 Array.prototype.clean = function (deleteValue) {
   for (var i = 0; i < this.length; i++) {
     if (this[i] == deleteValue) {
@@ -44,7 +43,7 @@ function get_course_array(course_data, currentWeek) {
             'week': convert_week(week),
             'course_time': time,
             'course_length': 1,
-            'course_name': course_detail.name + "@\n" + course_place.place + "\n周数:" + course_place.week_duration,
+            'course_name': course_detail.name + "\n @" + course_place.place + "\n周数:" + course_place.week_duration,
             'course_detail': course_detail,
             'week_duration': course_place.week_duration,
             'for_class': course_detail.for_class,
@@ -59,40 +58,7 @@ function get_course_array(course_data, currentWeek) {
     }
   }
 
-  //合并课程
-  for (var i = 0; i < data.length; i++) {
-    if (typeof (data[i]) == "undefined")
-      continue
-
-    var new_course_length = 1
-
-
-    if (i < data.length - 1) {
-      if (mergeable_course(data[i], data[i + 1], 1)) {
-        new_course_length += 1
-        delete (data[i + 1])
-      }
-    }
-
-    if (i < data.length - 2) {
-      if (mergeable_course(data[i], data[i + 2], 2)) {
-        new_course_length += 1
-        delete (data[i + 2])
-      }
-    }
-
-    if (i < data.length - 3) {
-      if (mergeable_course(data[i], data[i + 3], 3)) {
-        new_course_length += 1
-        delete (data[i + 3])
-      }
-    }
-
-    data[i].course_length = new_course_length
-
-  }
-  data.clean()
-
+  mergeCourse(data)
 
   return data
 }
@@ -136,8 +102,40 @@ function filter_course_by_week(currentCourse, currentWeek) {
 
   return isCourseValid
 }
-function get_course_forclasses(courseData) {
+function mergeCourse(data) {
+  //合并课程
+  for (var i = 0; i < data.length; i++) {
+    if (typeof (data[i]) == "undefined")
+      continue
 
+    var new_course_length = 1
+
+
+    if (i < data.length - 1) {
+      if (mergeable_course(data[i], data[i + 1], 1)) {
+        new_course_length += 1
+        delete (data[i + 1])
+      }
+    }
+
+    if (i < data.length - 2) {
+      if (mergeable_course(data[i], data[i + 2], 2)) {
+        new_course_length += 1
+        delete (data[i + 2])
+      }
+    }
+
+    if (i < data.length - 3) {
+      if (mergeable_course(data[i], data[i + 3], 3)) {
+        new_course_length += 1
+        delete (data[i + 3])
+      }
+    }
+
+    data[i].course_length = new_course_length
+
+  }
+  data.clean()
 }
 
 function mergeable_course(course01, course02, row) {

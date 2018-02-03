@@ -1,16 +1,46 @@
-<view class="flex-center" style="display: block;">
-  <view>
-    <button class='btn' type='primary' bindtap='onTapHelp'>帮助</button>
-    <button class='btn' type='primary' bindtap='onTapCustomizeCourses'>设置我的课表</button>
-    <button class='btn' type='primary' bindtap='about'>关于</button>
+<view class="btn-list">
+  <view class='btn-item' bindtap='onTapCustomizeCourses'>
+    <image class="btn-image" src="/images/setup_fill.png"></image>
+    <text class='btn-text'>设置我的课表</text>
   </view>
+  <view class='btn-line' />
 
-  <view>
+  <view class='btn-item' bindtap='onTapMyShareCourses'>
+    <image class="btn-image" src="/images/collection_fill.png"></image>
+    <text class='btn-text'>我的蹭课</text>
+  </view>
+  <view class='btn-line' />
+
+  <view class='btn-item' bindtap='onTapHelp'>
+    <image class="btn-image" src="/images/prompt.png"></image>
+    <text class='btn-text'>帮助</text>
+  </view>
+  <view class='btn-line' />
+
+  <view class='btn-item' bindtap='about'>
+    <image class="btn-image" src="/images/more.png"></image>
+    <text class='btn-text'>关于</text>
+  </view>
+  <view class='btn-line' />
+
+  <view class='btn-item' bindtap='feedback'>
+    <image class="btn-image" src="/images/feedback_fill.png"></image>
+    <text class='btn-text'>意见反馈</text>
+  </view>
+  <view class='btn-line' />
+</view>
+
+<view>
+  <view class="flex-center" style="display: block;">
     <text selectable='true'>\n开源组件许可 \n 
     上师大CAS登陆与课程爬虫 \n 地址: https://github.com/Doreamonsky/Shnu-Cas-Login \n
     隐私政策 \n
-    服务器只进行课表生成，不会保存与记录你的搜索记录,在小程序的使用中也不会强制要求微信授权登陆。
-    只有在我的课表设置页面才会要求读取剪贴板信息来自动导入课表。
+    1)服务器用于进行课表生成,会暂时保存你的搜索记录以检查服务器的正常。
+    2)在小程序的使用中不会要求微信授权登陆。
+    3)只有在我的课表设置页面才会要求读取剪贴板信息来自动导入课表。\n
+    Q&A \n
+    Q:这是不是官方开发的？ 
+    A:民间开发，数据来源于学校开课信息。
     </text>
   </view>
 </view>

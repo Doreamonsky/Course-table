@@ -3,8 +3,7 @@
 .itemButton{
   margin: 40rpx;
 }
-.flex-center{
-  display: flex;
+.main{
   margin: 20rpx;
 }
 .btn {
@@ -14,4 +13,26 @@
 .tip {
   font-size:30rpx;
   color:grey;
+  margin-bottom:40rpx; 
+}
+
+.title{
+  font-size:50rpx;
+  color:black;
+  border-style: solid;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  margin-top: 40rpx;
+}
+
+
+.oneImage{
+  width: 700rpx;
+  height: 1200rpx;
+}
+.threeImage{
+  width: 700rpx;
+  height: 450rpx;
 }

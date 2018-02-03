@@ -142,6 +142,10 @@ Page({
           wx.hideLoading()
       }
     })
+  }, onTapHelp:function(){
+    wx.navigateTo({
+      url: '/pages/helper/helper?type=0',
+    })
   }
 })
 

@@ -43,15 +43,21 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "帮助",
 					"pathName": "pages/helper/helper",
-					"query": ""
+					"query": "type=0"
 				},
 				{
 					"id": -1,
 					"name": "教室",
 					"pathName": "pages/classFinder/classFinder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "list",
+					"pathName": "pages/courseList/coruseList",
 					"query": ""
 				}
 			]

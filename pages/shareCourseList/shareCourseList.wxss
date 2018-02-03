@@ -1,0 +1,12 @@
+/* pages/courseList/courseList.wxss */
+
+.td {
+  font-size: 25rpx;
+}
+
+.tip {
+  margin: 20rpx;
+  color: red;
+  font-size: 50rpx;
+  text-decoration-line: underline;
+}

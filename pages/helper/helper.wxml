@@ -1,26 +1,67 @@
 <!--pages/helper/helper.wxml-->
-<view class="flex-center" style="display: block;">
+<view class="main">
   <view>
-    <button class='btn' open-type="contact" type='primary'>+QQ403036847联系开发者</button>
-  </view>
+    <block wx:if='{{feedback}}'>
+      <text class='title'>意见反馈</text>
+      <text selectable='true' class='tip'>
+      联系:
+      QQ:403036847  
+      微信:KV_122
+      </text>
+    </block>
+    <block wx:if='{{searchHelper}}'>
+      <text class='title'>高级搜索</text>
+      <text selectable='true' class='tip'>
+规则：[年级]，[专业名称]，[班级]，[?],[/*]
+#1)问号代表课程中包含的特殊关键词 
+#2) /* 表示*不允许出现 \n
+1、非中外合作
+例如：2016，广告学，1班，？
+末尾问号不可省
+2、中外合作
+例如：2016，广告学，1班，中法合作
+3、非师范班
+例如：2016，数学与应用数学，1班，？,/世承
+末尾问号不可省
+4、师范班
+例如：2016，数学与应用数学，1班，师范
+5、世承班
+例如：2016，数学与应用数学，1班，世承</text>
+    </block>
+    <block wx:if='{{featureHelper}}'>
+      <text class='title'>一、导入课表  </text>
+      <view>
+        <text class='tip' selectable='true'>1、课表小程序主页上选择我的课表。</text>
+      </view>
+      <view>
+        <image class='oneImage' src='/images/t2.jpg' />
+      </view>
+      <view>
+        <text class='tip' selectable='true'>2、打开上师大课表查询网站（http://course.shnu.edu.cn），进入我的课表，如下图选中所有课程列表后复制。</text>
+      </view>
+      <view>
+        <image class='oneImage' src='/images/t1Import.jpg' />
+      </view>
+      <view>
+        <text class='tip' selectable='true'>3、切换回课表小程序，自动导入课程后，选择生成课程表。</text>
+      </view>
+      <view>
+        <image class='oneImage' src='/images/t3.jpg' />
+      </view>
+      <view>
+        <text class='title' selectable='true'>二、添加蹭课课程至课程表  </text>
+      </view>
+      <view>
+        <text class='tip' selectable='true'>1、课程小程序主页可直接输入课程名称进行查询。进入查询页面后点击具体课程，可查看课程序号。</text>
+      </view>
+      <view>
+        <image class='threeImage' src='/images/t4.jpg' />
+      </view>
+      <view>
+        <text class='tip' selectable='true'>2、点击蹭课，放入蹭课收藏。在其他-我的蹭课中查看。或者复制课程序号，进入其他-设置我的课表，手动添加蹭课课程至我的课表。</text>
+      </view>
 
-  <view>
-    <text class ='tip' selectable='true'>\n 使用帮助 \n 
-      （一）自动导入我的课表 \n
-      打开 http://course.shnu.edu.cn/ 进入我的课表 如图全选所有课程列表,复制
-    </text>
+    </block>
 
-      <image style ='width:50%; margin:20px;'src='/images/t1Import.jpg'></image>
-    <text class ='tip' selectable='true'>
-      回到课程表小程序，然后在 '其他' 中点击 '设置我的课表'。然后即会提示导入课表，点击确定即可。\n
-      (二) 班级课表查询的高级搜索 \n
-      上师大有许多中外合作课程，他们的搜索关键词会阻碍非中外合作的课程的搜索，所以引入这样伪正则表达式的搜索匹配模式。
-      '/'表示不包含关键词 ?表示非中外合作课程
-      用法: \n Eg1: 比如要搜索16届的计算机科学与技术本科1班 \n 关键词:2016,计算机科学与技术,?,/专科 \n 
-      解释:?用于去除中外合作 /专科 去除专科
-
-      \n (三) QA:这是否是学校官方开发的? \n
-      是民间开发的(可以在'关于'中查看详情)，课表数据源来自全校开课查询，然后进行二次整理得到的。整理方式 可以见我的GitHub上师大爬虫项目
-    </text>
   </view>
 </view>

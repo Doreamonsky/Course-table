@@ -31,12 +31,11 @@ Page({
     //读取课表
     if (options.forceSetting == 0) {
       wx.showLoading()
-
       wx.getStorage({
         key: 'my_course_data',
         success: function (res) {
           wx.redirectTo({
-            url: '/pages/courseTable/courseTable?data=' + JSON.stringify(res.data) + '&currentWeek=1',
+            url: '/pages/courseTable/courseTable?data=' + JSON.stringify(res.data) + '&currentWeek=' + getApp().globalData.week,
           })
         }, fail: function (res) {
           inSetting = true

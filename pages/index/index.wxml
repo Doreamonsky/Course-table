@@ -36,7 +36,8 @@
         <button open-type="share" class='btn-share'>若好用，别忘分享给Shnuers！</button>
       </view>
 
-      <text class='keyBoxItem' style='display:flex; justify-content:center;'>阿里云提供计算服务 \n 版本 {{verison}}</text>
+      <text class='keyBoxItem' style='display:flex; justify-content:center;'>阿里云提供计算服务</text>
+      <text class='keyBoxItem' style='display:flex; justify-content:center;'>版本:{{verison}}</text>
 
     </view>
   </form>

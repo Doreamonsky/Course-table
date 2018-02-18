@@ -12,7 +12,7 @@ Page({
   data: {
     'course_has_keywords': true,
     'course_keywords_list': ['管理学', '高等数学', '建筑力学'],
-    'verison': app.globalData.currentVersion
+    'verison': app.globalData.currentVersion,
   },
   onReady: function () {
 

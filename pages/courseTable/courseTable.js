@@ -22,9 +22,10 @@ Page({
   ,
   onLoad: function (options) {
     jsonData = options.data
-    
+     
     currentWeek = options.currentWeek
-
+    console.log(jsonData)
+    
     var course_data = course_helper.get_course_array(JSON.parse(jsonData), currentWeek)
 
 

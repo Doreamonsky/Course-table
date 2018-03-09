@@ -3,7 +3,7 @@
 <view class='main'>
   <form bindsubmit='getCourse' bindreset='resetKeywordInput'>
     <view class="section">
-      <view class='title'>课程查询</view>
+      <!-- <view class='title'>课程查询</view>
       <input class='btn-input' auto-height='true' name="keywords" placeholder="输入关键词。如 建筑力学 " value="{{course_lasttime_keywords}}" bindinput='onNewKeywordInput' />
       <block wx:if="{{course_has_keywords}}">
 
@@ -18,20 +18,23 @@
 
       </block>
 
-
-      <view class="btn-area">
+-->
+      <!-- <view class="btn-area">
         <button formType="submit" class='btn-search'>提交</button>
         <button formType="reset" class='btn-rest'>重设</button>
-      </view>
+      </view>  -->
+<view class="btn-area">
+      <button class='btn-search' bindtap='onTouchMyCourse'>我的课表</button>
+            
 
-
-      <view class='section-more'>
+</view>
+      <!-- <view class='section-more'>
         <text class='btn-more' bindtap='onTouchMyCourse'>我的课表</text>
         <view class='divider' />
         <text class='btn-more' bindtap='onTouchClassRoomRouter'>教室检索</text>
          <view class='divider' />  
          <text class='btn-more' bindtap='onTouchClassFinder'>班级课表检索</text>  
-      </view>
+      </view> -->
       <view class='section-more' style='margin-top:140rpx;'>
         <button open-type="share" class='btn-share'>若好用，别忘分享给Shnuers！</button>
       </view>
